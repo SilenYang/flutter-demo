@@ -44,8 +44,8 @@ class _SplashPageState extends State<SplashPage> {
     print('init splash');
 
     // mock network
+    // _initNetData().then((_) {});
     Future.delayed(Duration(seconds: 2)).then((_) {
-      return 2;
       return Random().nextInt(2) + 1;
     }).then((_sta) {
       if (_sta == 1)
