@@ -3,6 +3,7 @@ import '../components/appBar.dart';
 
 // router widget
 import 'sliverBar.dart';
+import 'splashPage.dart';
 
 class User extends StatelessWidget {
   @override
@@ -63,8 +64,9 @@ class User extends StatelessWidget {
               route: SliverBar.routeName,
             ),
             ListItem(
-              name: '示例额',
+              name: '启动页示例',
               type: 'achieve',
+              route: SplashPage.routeName,
             ),
             Container(
               height: 4.0,
@@ -90,25 +92,25 @@ class ListItem extends StatelessWidget {
   final String route; // 跳转
 
   navigateTo(context) {
-    // Navigator.of(context).pushNamed('$route');
-    Navigator.push(
-      context,
-      PageRouteBuilder(
-        pageBuilder: (
-          BuildContext context,
-          _,
-          __,
-        ) {
-          return SliverBar();
-        },
-        transitionsBuilder: (_, Animation<double> animation, __, Widget child) {
-          return FadeTransition(
-            opacity: animation,
-            child: child,
-          );
-        },
-      ),
-    );
+    Navigator.of(context).pushNamed('$route');
+    // Navigator.push(
+    //   context,
+    //   PageRouteBuilder(
+    //     pageBuilder: (
+    //       BuildContext context,
+    //       _,
+    //       __,
+    //     ) {
+    //       return SliverBar();
+    //     },
+    //     transitionsBuilder: (_, Animation<double> animation, __, Widget child) {
+    //       return FadeTransition(
+    //         opacity: animation,
+    //         child: child,
+    //       );
+    //     },
+    //   ),
+    // );
   }
 
   @override

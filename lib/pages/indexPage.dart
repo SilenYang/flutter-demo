@@ -1,25 +1,15 @@
 import 'package:flutter/material.dart';
 
-import '../api/query.dart';
-import '../api/apis.dart';
-import 'package:dio/dio.dart';
 import '../components/appBar.dart';
 
-class Home extends StatefulWidget {
-  Home({Key key}) : super(key: key);
+class Index extends StatefulWidget {
+  Index({Key key}) : super(key: key);
 
   @override
-  createState() => _HomeState();
+  createState() => _IndexState();
 }
 
-class _HomeState extends State<Home> {
-  _myClick() async {
-    Dio _dio = DioFactory.getInstance().getDio();
-    String url = Apis.baseUrl + Apis.login;
-    Response response = await _dio.post(url, data: {"fakeId": 123456});
-    print(response.data);
-  }
-
+class _IndexState extends State<Index> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

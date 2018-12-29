@@ -9,6 +9,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   dio: ^1.0.9
+  flutter_swiper: ^1.1.4
 
 dev_dependencies:
   flutter_test:
@@ -40,6 +41,11 @@ flutter:
     - assets/images/shopping_cart.png
     - assets/images/stores.png
     - assets/images/wallet.png
+    - assets/images/splash.jpg
+    - assets/images/ad.jpg
+    - assets/images/guide1.jpg
+    - assets/images/guide2.jpg
+    - assets/images/guide3.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.io/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see

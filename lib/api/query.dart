@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'dart:io';
+import 'apis.dart';
 
 class DioFactory {
   static Dio _dio;
@@ -19,7 +20,7 @@ class DioFactory {
   _init() {
     _dio = Dio(
       Options(
-        baseUrl: "http://localhost:8000/api",
+        baseUrl: Apis.baseUrl,
         connectTimeout: 5000,
         receiveTimeout: 10000,
         // 5s
