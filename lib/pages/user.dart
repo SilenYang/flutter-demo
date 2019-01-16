@@ -4,13 +4,13 @@ import '../components/appBar.dart';
 // router widget
 import 'sliverBar.dart';
 import 'splashPage.dart';
+import 'list.dart';
 
 class User extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        context: context,
         title: 'Mine',
         titleColor: Colors.purple,
       ).getAppBar(),
@@ -74,8 +74,9 @@ class User extends StatelessWidget {
               color: Color(0xfff8f8f8),
             ),
             ListItem(
-              name: '示例饿',
+              name: '滚动列表示例',
               type: 'fav',
+              route: List.routerName,
             ),
           ],
         ),

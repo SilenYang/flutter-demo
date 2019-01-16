@@ -3,6 +3,7 @@ import '../pages/sliverBar.dart';
 import '../demoPages/page2.dart';
 import '../pages/homePage.dart';
 import '../pages/splashPage.dart';
+import '../pages/list.dart' as ScrollList;
 
 List<RouteData> routerList = <RouteData>[
   RouteData(
@@ -16,6 +17,10 @@ List<RouteData> routerList = <RouteData>[
   RouteData(
     routeName: SliverBar.routeName,
     buildRoute: (BuildContext context) => SliverBar(),
+  ),
+  RouteData(
+    routeName: ScrollList.List.routerName,
+    buildRoute: (BuildContext context) => ScrollList.List(),
   ),
   RouteData(
     routeName: Page2.routeName,

@@ -5,7 +5,7 @@ const List<Widget> defaultStackSpaceBars = <Widget>[];
 class CustomAppBar {
   CustomAppBar({
     this.context,
-    this.title,
+    @required this.title,
     this.backgroundColor,
     this.brightness = true,
     this.titleColor,
