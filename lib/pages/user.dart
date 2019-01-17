@@ -5,6 +5,7 @@ import '../components/appBar.dart';
 import 'sliverBar.dart';
 import 'splashPage.dart';
 import 'list.dart';
+import '../components/animationDemo/HeroAnimationPageA.dart';
 
 class User extends StatelessWidget {
   @override
@@ -62,11 +63,13 @@ class User extends StatelessWidget {
               name: 'sliverAppBar示例',
               type: 'binding',
               route: SliverBar.routeName,
+              page: SliverBar(),
             ),
             ListItem(
               name: '启动页示例',
               type: 'achieve',
               route: SplashPage.routeName,
+              page: SplashPage(),
             ),
             Container(
               height: 4.0,
@@ -77,6 +80,13 @@ class User extends StatelessWidget {
               name: '滚动列表示例',
               type: 'fav',
               route: List.routerName,
+              page: List(),
+            ),
+            ListItem(
+              name: 'Hero动画示例',
+              type: 'binding',
+              route: HeroAnimationRoute.routeName,
+              page: HeroAnimationRoute(),
             ),
           ],
         ),
@@ -86,32 +96,33 @@ class User extends StatelessWidget {
 }
 
 class ListItem extends StatelessWidget {
-  ListItem({@required this.name, @required this.type, this.route});
+  ListItem({@required this.name, @required this.type, this.route, this.page});
 
   final String name; // 名称
   final String type; // icon
   final String route; // 跳转
+  final Widget page; // 页面
 
   navigateTo(context) {
-    Navigator.of(context).pushNamed('$route');
-    // Navigator.push(
-    //   context,
-    //   PageRouteBuilder(
-    //     pageBuilder: (
-    //       BuildContext context,
-    //       _,
-    //       __,
-    //     ) {
-    //       return SliverBar();
-    //     },
-    //     transitionsBuilder: (_, Animation<double> animation, __, Widget child) {
-    //       return FadeTransition(
-    //         opacity: animation,
-    //         child: child,
-    //       );
-    //     },
-    //   ),
-    // );
+    // Navigator.of(context).pushNamed('$route');
+    Navigator.push(
+      context,
+      PageRouteBuilder(
+        pageBuilder: (
+          BuildContext context,
+          _,
+          __,
+        ) {
+          return page;
+        },
+        transitionsBuilder: (_, Animation<double> animation, __, Widget child) {
+          return FadeTransition(
+            opacity: animation,
+            child: child,
+          );
+        },
+      ),
+    );
   }
 
   @override

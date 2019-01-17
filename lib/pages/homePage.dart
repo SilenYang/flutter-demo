@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'indexPage.dart';
 import 'user.dart';
 import 'animatePage.dart';
-import '../tmp/animation.dart';
+import '../components/animationDemo/animation.dart';
 
 class Home extends StatefulWidget {
   static const String routeName = '/home';
