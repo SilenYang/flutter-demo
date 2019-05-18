@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import '../components/appBar.dart';
+import '../utils/pages.dart';
 
 // router widget
 import 'sliverBar.dart';
 import 'splashPage.dart';
 import 'list.dart';
 import '../components/animationDemo/HeroAnimationPageA.dart';
+import '../utils/pages.dart';
 
 class User extends StatelessWidget {
   @override
@@ -63,13 +65,12 @@ class User extends StatelessWidget {
               name: 'sliverAppBar示例',
               type: 'binding',
               route: SliverBar.routeName,
-              page: SliverBar(),
+              // route: pages.,
             ),
             ListItem(
               name: '启动页示例',
               type: 'achieve',
               route: SplashPage.routeName,
-              page: SplashPage(),
             ),
             Container(
               height: 4.0,
@@ -80,13 +81,11 @@ class User extends StatelessWidget {
               name: '滚动列表示例',
               type: 'fav',
               route: List.routerName,
-              page: List(),
             ),
             ListItem(
               name: 'Hero动画示例',
               type: 'binding',
               route: HeroAnimationRoute.routeName,
-              page: HeroAnimationRoute(),
             ),
           ],
         ),
@@ -96,12 +95,11 @@ class User extends StatelessWidget {
 }
 
 class ListItem extends StatelessWidget {
-  ListItem({@required this.name, @required this.type, this.route, this.page});
+  ListItem({@required this.name, @required this.type, this.route});
 
   final String name; // 名称
   final String type; // icon
   final String route; // 跳转
-  final Widget page; // 页面
 
   navigateTo(context) {
     // Navigator.of(context).pushNamed('$route');
@@ -113,7 +111,7 @@ class ListItem extends StatelessWidget {
           _,
           __,
         ) {
-          return page;
+          return pages[route];
         },
         transitionsBuilder: (_, Animation<double> animation, __, Widget child) {
           return FadeTransition(
@@ -127,6 +125,7 @@ class ListItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // print(pages.keys);
     return Container(
       width: double.infinity,
       // height: 42.0,

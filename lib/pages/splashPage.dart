@@ -29,7 +29,7 @@ class _SplashPageState extends State<SplashPage> {
   String _ads = 'assets/images/ad.jpg';
 
   Future<int> _initNetData() async {
-    Dio _dio = DioFactory.getInstance().getDio();
+    Dio _dio = Fetch().getDio();
     String url = Apis.baseUrl + Apis.login;
     Response response = await _dio.post(url, data: {"fakeId": 123456});
     // print(response.data);

@@ -4,6 +4,7 @@ const List<Widget> defaultStackSpaceBars = <Widget>[];
 
 class CustomAppBar {
   CustomAppBar({
+    Key key,
     this.context,
     @required this.title,
     this.backgroundColor,
@@ -48,7 +49,7 @@ class CustomAppBar {
           fontSize: 18.0,
         ),
       ),
-      centerTitle: centerTitle,
+      centerTitle: centerTitle ? centerTitle : Theme.of(context).primaryColor,
       leading: leading,
       actions: actions,
       backgroundColor: backgroundColor,

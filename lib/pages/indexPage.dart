@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../components/appBar.dart';
+import '../api/query.dart';
+import '../api/apis.dart';
+import 'package:dio/dio.dart';
 
 class Index extends StatefulWidget {
   Index({Key key}) : super(key: key);
@@ -10,6 +13,15 @@ class Index extends StatefulWidget {
 }
 
 class _IndexState extends State<Index> {
+  Future<Null> _init() async {
+    Dio _fetch = Fetch().getDio();
+    Dio _dio = Fetch().getDio();
+    print(identical(_fetch, _dio));
+    // String url = Apis.baseUrl + Apis.login;
+    // Response response = await _fetch.post(url, data: {"fakeId": 123456});
+    // print(response.data);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,6 +38,15 @@ class _IndexState extends State<Index> {
             },
             child: Text("点我跳转"),
           ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          _init();
+        },
+        child: Icon(
+          Icons.favorite,
+          color: Theme.of(context).primaryColor,
         ),
       ),
     );

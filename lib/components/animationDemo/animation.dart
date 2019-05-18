@@ -2,6 +2,7 @@ import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
 
 class AnimateNum extends StatefulWidget {
+  static const String routeName = '/animatedNum';
   _LogoAppState createState() => _LogoAppState();
 }
 

@@ -3,7 +3,7 @@ import '../components/appBar.dart';
 import '../utils/screen.dart';
 
 class List extends StatefulWidget {
-  static const String routerName = 'list';
+  static const String routerName = '/list';
 
   @override
   State<StatefulWidget> createState() => _ListState();
