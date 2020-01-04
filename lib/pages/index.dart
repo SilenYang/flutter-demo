@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'splashPage.dart';
-import 'homePage.dart';
+// import 'homePage.dart';
 import '../utils/route.dart';
 
 class App extends StatefulWidget {

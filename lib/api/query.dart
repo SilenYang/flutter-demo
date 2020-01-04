@@ -22,7 +22,7 @@ class Fetch {
         connectTimeout: 5000,
         receiveTimeout: 10000,
         headers: {"user-agent": "dio", "api": "1.0.0"},
-        contentType: ContentType.JSON,
+        contentType: ContentType.json,
         responseType: ResponseType.PLAIN,
       ),
     );
