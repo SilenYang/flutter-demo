@@ -62,13 +62,13 @@ class User extends StatelessWidget {
               width: double.infinity,
             ),
             ListItem(
-              name: 'sliverAppBar示例',
+              name: 'sliverAppBar',
               type: 'binding',
               route: SliverBar.routeName,
               // route: pages.,
             ),
             ListItem(
-              name: '启动页示例',
+              name: '启动页',
               type: 'achieve',
               route: SplashPage.routeName,
             ),
@@ -78,12 +78,12 @@ class User extends StatelessWidget {
               color: Color(0xfff8f8f8),
             ),
             ListItem(
-              name: '滚动列表示例',
+              name: '滚动列表',
               type: 'fav',
               route: List.routerName,
             ),
             ListItem(
-              name: 'Hero动画示例',
+              name: 'Hero动画',
               type: 'binding',
               route: HeroAnimationRoute.routeName,
             ),
